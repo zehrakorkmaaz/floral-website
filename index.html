@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Floral - Çiçek ve Aranjman Dünyası">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Floral - Çiçek & Aranjman Dünyası</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/core-img/favicon.ico">
+  
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* 🛠️ FOOTER GÖRÜNÜRLÜĞÜ İÇİN YENİ VE KESİN YAPISAL AYARLAR */
+    /* Bu, tüm içeriği flex container içine alıp footer'ı en alta sabitler */
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Ana içerik kapsayıcısı (Header dahil) */
+    #page-content {
+        flex-grow: 1; /* Geri kalan tüm alanı kapla */
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Footer'ın görünürlüğünü garanti ediyoruz */
+    .footer-area {
+        flex-shrink: 0; /* Küçülmesini engelle */
+        min-height: 400px;
+        background-color: #333 !important;
+        padding-top: 50px;
+    }
+
+    /* 🛠️ MENÜ DÜZENLEMESİ (Tek Sıra Yapma) */
+    .classy-navbar .classynav ul li a {
+        font-size: 14px !important;
+        padding: 0 10px !important; 
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    
+    /* Logo ile menü arası mesafe */
+    .nav-brand {
+        margin-right: 15px !important;
+    }
+
+    /* Modal Stilleri */
+    .modal-header {
+      background-color: #70c745;
+      color: white;
+      border-bottom: none;
+    }
+    .modal-title {
+      font-family: 'Playfair Display', serif;
+      color: white;
+      font-size: 1.5rem;
+    }
+    .modal-body {
+      padding: 2rem;
+      font-size: 16px;
+      color: #707070;
+    }
+    .modal-body h6 {
+      color: #70c745;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    
+    /* 📢 DUYURULAR - YENİ GÖRSELSİZ TASARIM STİLİ */
+    .single-blog-post {
+        background-color: #fff;
+        border-radius: 8px;
+        transition: 0.3s;
+        height: 100%;
+        padding: 30px; /* Görsel yerine iç dolgu artırıldı */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        border-left: 5px solid #70c745; /* Vurgu çizgisi */
+    }
+    .single-blog-post:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        border-left-color: #5da839;
+    }
+    .post-thumbnail { /* Görsel alanını kaldırıyoruz */
+        display: none; 
+    }
+    .post-title h5 {
+        font-size: 20px; /* Başlık büyütüldü */
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #333;
+        transition: 0.3s;
+    }
+    .post-title:hover h5 {
+        color: #70c745;
+    }
+    .post-excerpt {
+        color: #707070;
+        margin-bottom: 15px;
+    }
+    
+    /* Footer logo stili (orijinal şablondan) */
+    .footer-area .footer-logo a {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Duyuru Tarih İşareti Düzeltmesi */
+    .post-meta a {
+        display: inline-flex;
+        align-items: center;
+        color: #999;
+        font-size: 13px;
+        margin-bottom: 10px; /* Tarih altı boşluk */
+    }
+    .post-meta a i {
+        margin-right: 5px;
+        color: #70c745; /* İkon rengi vurgulandı */
+    }
+    
+  </style>
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div class="preloader d-flex align-items-center justify-content-center">
+    <div class="preloader-circle"></div>
+    <div class="preloader-img"><img src="img/core-img/leaf.png" alt=""></div>
+  </div>
+  
+  <!-- YENİ ANA İÇERİK KAPSAYICISI BAŞLANGIÇ -->
+  <div id="page-content">
+
+    <!-- 🌸 HEADER -->
+    <header class="header-area">
+      <!-- Top Header -->
+      <div class="top-header-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="top-header-content d-flex align-items-center justify-content-between">
+                <div class="top-header-meta">
+                  <a href="mailto:info@floral.com.tr"><i class="fa fa-envelope-o"></i> <span>info@floral.com.tr</span></a>
+                  <a href="tel:+905551234567"><i class="fa fa-phone"></i> <span>+90 555 123 45 67</span></a>
+                </div>
+                <div class="top-header-meta d-flex">
+                  <div class="login"><a href="admin-panel.html" target="_blank"><i class="fa fa-lock"></i> <span>Yönetici</span></a></div>
+                  <div class="cart"><a href="cart.html"><i class="fa fa-shopping-cart"></i> <span>(1)</span></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🌿 Navbar (Birimler Kaldırıldı) -->
+      <div class="alazea-main-menu">
+        <div class="classy-nav-container breakpoint-off">
+          <div class="container">
+            <nav class="classy-navbar justify-content-between" id="alazeaNav">
+              
+              <!-- Logo -->
+              <a href="index.html" class="nav-brand" style="font-family:'Playfair Display',serif;font-weight:700;font-size:32px;color:#70c745;text-decoration:none;">Floral</a>
+
+              <div class="classy-navbar-toggler"><span class="navbarToggler"><span></span><span></span><span></span></span></div>
+
+              <div class="classy-menu">
+                <div class="classycloseIcon"><div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div></div>
+                
+                <div class="classynav">
+                 <ul>
+                  <li><a href="index.html">Anasayfa</a></li>
+                  <li><a href="about.html">Hakkımızda</a></li>
+                  <li><a href="misyon-vizyon.html">Misyon&Vizyon</a></li> 
+                  <li class="active"><a href="departments.html">Birimler</a></li> 
+
+                  <li class="active">
+                    <a href="shop.html">Ürünler</a>
+                    <ul class="dropdown">
+                        <li><a href="shop.html?category=buketler">Buketler</a></li>
+                        <li><a href="shop.html?category=saksi-cicekleri">Saksı Çiçekleri</a></li>
+                        <li><a href="shop.html?category=ozel-tasarim">Özel Tasarım</a></li>
+                    </ul>
+                  </li>
+                   <li><a href="statistics.html">Sayılarla Biz</a></li>
+                  <li><a href="blog.html">Duyurular</a></li>
+                  <li><a href="contact.html">İletişim</a></li>
+                </ul>
+
+                  <div id="searchIcon"><i class="fa fa-search"></i></div>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 🌺 HERO SLIDER -->
+    <section class="hero-area">
+      <div class="hero-post-slides owl-carousel">
+
+        <!-- SLIDE 1: MARKA TANITIMI -->
+        <div class="single-hero-post bg-overlay">
+          <div class="slide-img bg-img" style="background-image:url(img/bg-img/1.jpg)"></div>
+          <div class="container h-100">
+            <div class="row h-100 align-items-center text-center">
+              <div class="col-12">
+                <div class="hero-slides-content">
+                  <h2>Floral: Duygularınızın Tercümanı</h2>
+                  <p>Anlamlı anlarınızı, taptaze ve özenle seçilmiş çiçeklerle kalıcı kılın. <br> Estetik tasarımlarımızla fark yaratın.</p>
+                  <div class="welcome-btn-group">
+                    <a href="about.html" class="btn alazea-btn mr-30">HİKAYEMİZ</a>
+                    <a href="misyon-vizyon.html" class="btn alazea-btn active">MİSYON & VİZYON</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 2: ÜRÜN TANITIMI (Genel Ürün Tanıtımı) -->
+        <div class="single-hero-post bg-overlay">
+          <div class="slide-img bg-img" style="background-image:url(img/bg-img/2.jpg)"></div>
+          <div class="container h-100">
+            <div class="row h-100 align-items-center text-center">
+              <div class="col-12">
+                <div class="hero-slides-content">
+                  <h2>En Taze Çiçekler Kapınızda</h2>
+                  <p>Sezonun en canlı ve kaliteli çiçeklerini, özel teslimat güvencesiyle sunuyoruz. </p>
+                  <div class="welcome-btn-group">
+                    <a href="shop.html" class="btn alazea-btn mr-30">TÜM ÜRÜNLERİ İNCELE</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 3: SPESİFİK ÜRÜN TANITIMI (shop-details.html'e Yönlendiriyor) -->
+        <div class="single-hero-post bg-overlay">
+          <div class="slide-img bg-img" style="background-image:url(img/bg-img/gul.jpg)"></div>
+          <div class="container h-100">
+            <div class="row h-100 align-items-center text-center">
+              <div class="col-12">
+                <div class="hero-slides-content">
+                  <h2>Lilyum & Gül Özel Buketi</h2>
+                  <p>Sezonun en çok satan, zarif lilyum ve gül aranjmanını kaçırmayın.</p>
+                  <div class="welcome-btn-group">
+                    <a href="shop-details.html" class="btn alazea-btn mr-30">DETAYLARI GÖR</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 🌼 HİZMETLER -->
+    <section class="our-services-area bg-gray section-padding-100-0">
+      <div class="container">
+        <div class="section-heading text-center">
+          <h2>HİZMETLERİMİZ</h2>
+          <p>Sizin için en özel çiçek hizmetlerini sunuyoruz.</p>
+        </div>
+        <div class="row justify-content-center">
+          <!-- Hizmet 1 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="100ms">
+              <div class="service-icon mr-30"><img src="img/core-img/s1.png" alt=""></div>
+              <div class="service-content"><h5>Gelin Buketleri</h5><p>Hayalinizdeki düğün için zarif tasarımlar.</p></div>
+            </div>
+          </div>
+          <!-- Hizmet 2 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="300ms">
+              <div class="service-icon mr-30"><img src="img/core-img/s2.png" alt=""></div>
+              <div class="service-content"><h5>Etkinlik & Dekorasyon</h5><p>Davetlerinizde fark yaratın.</p></div>
+            </div>
+          </div>
+          <!-- Hizmet 3 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="500ms">
+              <div class="service-icon mr-30"><img src="img/core-img/s3.png" alt=""></div>
+              <div class="service-content"><h5>Online Teslimat</h5><p>Aynı gün kapınızda.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🌷 HAKKIMIZDA -->
+    <section class="about-us-area section-padding-100-0">
+      <div class="container">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-12 col-lg-5">
+            <div class="section-heading">
+              <h2>HAKKIMIZDA</h2>
+              <p>Floral, 2015’ten bu yana duygularınızı çiçeklerle anlatıyor.</p>
+            </div>
+            <p>Her biri özenle hazırlanan aranjmanlarımızla; düğün, doğum günü, özel gün ve davetlerde doğanın güzelliğini sizinle buluşturuyoruz. Müşteri memnuniyetini en büyük önceliğimiz olarak görüyoruz.</p>
+            <div class="alazea-progress-bar mt-4">
+              <div class="single_progress_bar"><p>Müşteri Memnuniyeti</p><div id="bar1" class="barfiller"><span class="fill" data-percentage="95"></span></div></div>
+              <div class="single_progress_bar"><p>Zamanında Teslimat</p><div id="bar2" class="barfiller"><span class="fill" data-percentage="90"></span></div></div>
+              <div class="single_progress_bar"><p>Tasarım Çeşitliliği</p><div id="bar3" class="barfiller"><span class="fill" data-percentage="85"></span></div></div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="alazea-benefits-area">
+              <div class="row">
+                <div class="col-12 col-sm-6"><div class="single-benefits-area"><img src="img/core-img/b1.png" alt=""><h5>Taze Çiçekler</h5><p>Her gün yenilenen stok.</p></div></div>
+                <div class="col-12 col-sm-6"><div class="single-benefits-area"><img src="img/core-img/b3.png" alt=""><h5>Doğal Malzeme</h5><p>%100 geri dönüştürülebilir.</p></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 📊 SAYILARLA BİZ (Mantıksal Sayılar) -->
+    <section class="cool-facts-area bg-img section-padding-100-0" style="background-image: url(img/bg-img/cool-facts.jpg);">
+      <div class="container">
+          <div class="row">
+              <div class="col-12 col-sm-6 col-lg-3">
+                  <div class="single-cool-fact d-flex align-items-center justify-content-center mb-100">
+                      <div class="cf-content"><h2><span class="counter">98</span>%</h2><h6>Tazelik Garantisi</h6></div>
+                  </div>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3">
+                  <div class="single-cool-fact d-flex align-items-center justify-content-center mb-100">
+                      <div class="cf-content"><h2><span class="counter">500</span>+</h2><h6>Benzersiz Tasarım</h6></div>
+                  </div>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3">
+                  <div class="single-cool-fact d-flex align-items-center justify-content-center mb-100">
+                      <div class="cf-content"><h2><span class="counter">95</span>%</h2><h6>Hızlı Teslimat</h6></div>
+                  </div>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3">
+                  <div class="single-cool-fact d-flex align-items-center justify-content-center mb-100">
+                      <div class="cf-content"><h2><span class="counter">10</span>K+</h2><h6>Mutlu Müşteri</h6></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- 📢 DUYURULAR & İPUÇLARI (Görselsiz Yeni Tasarım) -->
+    <section class="blog-area section-padding-100-0">
+      <div class="container">
+        <div class="section-heading text-center">
+          <h2>DUYURULAR & İPUÇLARI</h2>
+          <p>Güncel kampanya ve ipuçlarını takip edin.</p>
+        </div>
+
+        <div class="row"> 
+          
+          <!-- Duyuru 1 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="single-blog-post mb-100">
+              <div class="post-content">
+                <a href="#" data-toggle="modal" data-target="#modal1" class="post-title"><h5>Yaz Sezonu Buketleri Kampanyası</h5></a>
+                <div class="post-meta"><a href="#"><i class="fa fa-calendar"></i> 20 Haziran 2025</a></div>
+                <p class="post-excerpt">Sıcak havalara dayanıklı özel yaz buketlerimizde %20 indirim fırsatını kaçırmayın.</p>
+                <a href="#" data-toggle="modal" data-target="#modal1" class="read-more-btn">Detayları Gör <i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Duyuru 2 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="single-blog-post mb-100">
+              <div class="post-content">
+                <a href="#" data-toggle="modal" data-target="#modal2" class="post-title"><h5>Ofis Bitkileri Seçim Rehberi</h5></a>
+                <div class="post-meta"><a href="#"><i class="fa fa-calendar"></i> 10 Mayıs 2025</a></div>
+                <p class="post-excerpt">Huzur ve verimlilik için ofis ortamına en uygun bitki türleri ve bakımı hakkında ipuçları.</p>
+                <a href="#" data-toggle="modal" data-target="#modal2" class="read-more-btn">Detayları Gör <i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Duyuru 3 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="single-blog-post mb-100">
+              <div class="post-content">
+                <a href="#" data-toggle="modal" data-target="#modal3" class="post-title"><h5>Taze Çiçek Bakım Kılavuzu</h5></a>
+                <div class="post-meta"><a href="#"><i class="fa fa-calendar"></i> 1 Nisan 2025</a></div>
+                <p class="post-excerpt">Vazo çiçeklerinizi daha uzun ömürlü tutmanın püf noktaları ve bilmeniz gereken temel adımlar.</p>
+                <a href="#" data-toggle="modal" data-target="#modal3" class="read-more-btn">Detayları Gör <i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Duyuru 4 -->
+          <div class="col-12 col-md-6 col-lg-4"> 
+            <div class="single-blog-post mb-100">
+              <div class="post-content">
+                <a href="#" data-toggle="modal" data-target="#modal4" class="post-title"><h5>Ücretsiz Orkide Bakım Atölyesi</h5></a>
+                <div class="post-meta"><a href="#"><i class="fa fa-calendar"></i> 15 Mart 2025</a></div>
+                <p class="post-excerpt">Orkide sevenler için uzmanımızdan uygulamalı eğitim. Kontenjan sınırlıdır, hemen kaydolun!</p>
+                <a href="#" data-toggle="modal" data-target="#modal4" class="read-more-btn">Detayları Gör <i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Duyuru 5 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="single-blog-post mb-100">
+              <div class="post-content">
+                <a href="#" data-toggle="modal" data-target="#modal5" class="post-title"><h5>Yıl Boyu Sabit Kargo İndirimi</h5></a>
+                <div class="post-meta"><a href="#"><i class="fa fa-calendar"></i> 1 Mart 2025</a></div>
+                <p class="post-excerpt">Tüm Türkiye gönderimlerinde sabit ve indirimli kargo ücreti fırsatını duyurmaktan mutluluk duyarız.</p>
+                <a href="#" data-toggle="modal" data-target="#modal5" class="read-more-btn">Detayları Gör <i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Daha Fazla Duyuru Butonu (Hocanın İsteri) -->
+          <div class="col-12 text-center mt-50">
+            <a href="blog.html" class="btn alazea-btn">Daha Fazla Duyuru</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 🌸 NEWSLETTER -->
+    <section class="subscribe-newsletter-area bg-img" style="background-image:url('img/bg-img/subscribe.jpg')">
+      <div class="container text-center">
+        <h3 class="text-white mb-4">Yeni Koleksiyonlardan Haberdar Olun</h3>
+        <div class="subscribe-form">
+          <form action="#" method="post">
+            <input type="email" name="email" placeholder="Email adresinizi girin...">
+            <button type="submit" class="btn alazea-btn">Abone Ol</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL PENCERELER (Sayfa Sonu) -->
+    
+    <!-- Modal 1 -->
+    <div class="modal fade" id="modal1" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header"><h5 class="modal-title">Yaz Sezonu Buketleri Kampanyası</h5><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+          <div class="modal-body">
+            <p>Yaz aylarında sardunya, petunya ve begonya gibi ısıya dayanıklı türleri tercih edebilirsiniz. Detaylı kampanya bilgileri ve %20 indirim kodunuz ektedir. Unutmayın, bu fırsat sadece online siparişlerde geçerlidir.</p>
+            <hr>
+            <h6>Ekli Dosyalar (Admin Panelinde Yükleme Alanı Mevcuttur):</h6>
+            <div class="mt-2"><a href="#" class="btn btn-sm btn-outline-secondary"><i class="fa fa-file-pdf-o"></i> Kampanya_Kosullari.pdf</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal fade" id="modal2" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header"><h5 class="modal-title">Ofis Bitkileri Seçim Rehberi</h5><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+          <div class="modal-body">
+            <p>Ofisler için ışık ihtiyacı az olan Sukulent, Paşa Kılıcı ve Deve Tabanı öneriyoruz. Bu bitkiler hem estetik hem de bakımı kolaydır. Kurumsal siparişleriniz için özel indirimler mevcuttur.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal fade" id="modal3" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header"><h5 class="modal-title">Taze Çiçek Bakım Kılavuzu</h5><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+          <div class="modal-body"><p>Vazo çiçeklerinizin suyunu günaşırı değiştirin ve saplarını 45 derece açıyla keserek daha uzun süre taze kalmasını sağlayın. Detaylı kılavuza ekli Word belgesinden ulaşabilirsiniz.</p>
+            <hr>
+            <h6>Ekli Dosyalar:</h6>
+            <div class="mt-2"><a href="#" class="btn btn-sm btn-outline-secondary"><i class="fa fa-file-word-o"></i> Bakim_Klavuzu.docx</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div class="modal fade" id="modal4" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header"><h5 class="modal-title">Ücretsiz Orkide Bakım Atölyesi</h5><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+          <div class="modal-body"><p>Orkide bakımı uzmanından uygulamalı eğitim! Kayıt için en yakın mağazamızı arayabilir veya İletişim sayfamızdaki formu kullanabilirsiniz. Etkinlik görseli ektedir.</p>
+            <hr>
+            <h6>Ekli Dosyalar:</h6>
+            <div class="mt-2"><a href="#" class="btn btn-sm btn-outline-secondary"><i class="fa fa-file-image-o"></i> Atolye_Gorseli.jpg</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 5 -->
+    <div class="modal fade" id="modal5" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header"><h5 class="modal-title">Yıl Boyu Sabit Kargo İndirimi</h5><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+          <div class="modal-body"><p>Tüm Türkiye sabit 20 TL kargo ücreti uygulamasına geçilmiştir. 500 TL üzeri alışverişlerde kargo ücretsizdir. Detaylı bilgi için bizi arayın.</p></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- YENİ ANA İÇERİK KAPSAYICISI BİTİŞ -->
+
+  <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area bg-img" style="background-image: url(img/bg-img/3.jpg);">
+        <div class="main-footer-area">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="footer-logo mb-30">
+                                <a href="#" style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#fff;text-decoration:none;">Floral</a>
+
+                            </div>
+                            <p>Floral, doğanın zarafetini özel anlarınıza taşır. Her çiçek bir hikaye anlatır; biz o hikayeyi güzelleştiriyoruz.</p>
+                            <div class="social-info">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title"><h5>HIZLI LİNKLER</h5></div>
+                            <nav class="widget-nav">
+                                <ul>
+                                    <li><a href="shop.html">Satın Al</a></li>
+                                    <li><a href="about.html">Sık Sorulanlar</a></li>
+                                    <li><a href="checkout.html">Ödeme</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li><a href="shop.html">İade</a></li>
+                                    <li><a href="shop.html">Kargo</a></li>
+                                    <li><a href="about.html">Kariyer</a></li>
+                                    <li><a href="contact.html">İletişim</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title"><h5>EN ÇOK SATANLAR</h5></div>
+                            <div class="single-best-seller-product d-flex align-items-center">
+                                <div class="product-thumbnail"><img src="img/bg-img/4.jpg" alt=""></div>
+                                <div class="product-info">
+                                    <a href="shop.html">Klasik Buket</a><p>₺1050</p>
+                                </div>
+                            </div>
+                            <div class="single-best-seller-product d-flex align-items-center">
+                                <div class="product-thumbnail"><img src="img/bg-img/5.jpg" alt=""></div>
+                                <div class="product-info">
+                                    <a href="shop.html">Lale Aranjmanı</a><p>₺1300</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title"><h5>İLETİŞİM</h5></div>
+                            <div class="contact-information">
+                                <p><span>Adres:</span> İstanbul, Türkiye</p>
+                                <p><span>Telefon:</span> +90 555 123 45 67</p>
+                                <p><span>Email:</span> info@floral.com.tr</p>
+                                <p><span>Çalışma Saatleri:</span> Pzt - Cmt: 09:00 - 19:00</p>
+                                <p><span>Kapalı Gün:</span> Pazar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12"><div class="border-line"></div></div>
+                    <div class="col-12 col-md-6">
+                        <div class="copywrite-text">
+                            <p>© 2025 Floral | Tüm Hakları Saklıdır.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="footer-nav">
+                            <nav>
+                                <ul>
+
+                                    <li><a href="about.html">Hakkımızda</a></li>
+                                    <li><a href="misyon-vizyon.html">Misyon-Vizyon</a></li>
+                                    <li><a href="departments.html">Birimler</a></li>
+                                    <li><a href="shop.html">Ürünler</a></li>
+                                    <li><a href="statistics.html">Sayılarla Biz</a></li>
+                                    <li><a href="blog.html">Duyurular</a></li>
+                                    <li><a href="contact.html">İletişim</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+  <!-- JS Files -->
+  <script src="js/jquery/jquery-2.2.4.min.js"></script>
+  <script src="js/bootstrap/popper.min.js"></script>
+  <script src="js/bootstrap/bootstrap.min.js"></script>
+  <script src="js/plugins/plugins.js"></script>
+  <script src="js/active.js"></script>
+</body>
+</html>

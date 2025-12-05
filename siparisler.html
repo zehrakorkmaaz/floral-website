@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Floral - Sipariş Yönetimi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* YENİ SOFT TEMA STİLLERİ - admin-panel.html'den kopyalanmıştır */
+        body { 
+            background-color: #f8f9fa; 
+            font-family: 'Segoe UI', sans-serif; 
+        }
+        /* Sidebar: Açık ve ferah bir görünüm */
+        .sidebar { 
+            min-height: 100vh; 
+            background-color: #ffffff; /* Beyaz Sidebar */
+            color: #333; 
+            border-right: 1px solid #e9ecef;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.05); /* Hafif gölge */
+        }
+        .sidebar h3 { 
+            font-family: 'Playfair Display', serif; 
+            color: #70c745; /* Floral Yeşil */
+            margin-bottom: 30px; 
+            font-size: 28px;
+        }
+        .sidebar a { 
+            color: #555; 
+            display: block; 
+            padding: 15px; 
+            text-decoration: none; 
+            border-left: 4px solid transparent; 
+            transition: 0.3s; 
+            font-weight: 500;
+        }
+        /* Aktif ve Hover: Floral vurgusu */
+        .sidebar a:hover, .sidebar a.active { 
+            background-color: #f1f8e9; /* Çok açık yeşil arka plan */
+            color: #333; 
+            border-left-color: #70c745; 
+        }
+        /* Genel Kartlar ve Butonlar */
+        .card-header { 
+            background-color: #fff; 
+            border-bottom: 1px solid #eee; 
+            font-weight: bold; 
+            color: #333; 
+            font-size: 1.1rem;
+        }
+        .btn-success { 
+            background-color: #70c745; 
+            border-color: #70c745; 
+            transition: 0.3s;
+        }
+        .btn-success:hover { 
+            background-color: #5da839; 
+            border-color: #5da839;
+        }
+        /* Sipariş Detay Butonu için özel stil (Öncekinde olduğu gibi) */
+        .btn-info-floral {
+            background-color: #4db6ac;
+            border-color: #4db6ac;
+            color: white;
+        }
+        .btn-info-floral:hover {
+            background-color: #409a91;
+            border-color: #409a91;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="d-flex">
+    <div class="sidebar col-md-2 p-0 text-center">
+        <h3 class="py-4">Floral Admin</h3>
+        <div class="text-left">
+            <a href="admin-panel.html"><i class="fa fa-bullhorn mr-2"></i> Duyurular</a>
+            <a href="urun-yonetimi.html"><i class="fa fa-leaf mr-2"></i> Ürün Yönetimi</a>
+            <a href="siparisler.html" class="active"><i class="fa fa-shopping-cart mr-2"></i> Siparişler</a>
+            <a href="musteriler.html"><i class="fa fa-users mr-2"></i> Müşteriler</a>
+            <a href="mesajlar.html"><i class="fa fa-envelope mr-2"></i> Mesajlar</a>
+            <a href="index.html" class="mt-5 text-danger" style="border-left-color: transparent !important;"><i class="fa fa-sign-out mr-2"></i> Siteye Dön</a>
+        </div>
+    </div>
+
+    <div class="col-md-10 p-4">
+        <h2 class="mb-4 text-dark">Sipariş Yönetimi</h2>
+        
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card text-white bg-danger shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Yeni Sipariş</h5>
+                        <p class="card-text h3">3 Adet</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-warning shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Hazırlanıyor</h5>
+                        <p class="card-text h3">7 Adet</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-info shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Kargoda/Yolda</h5>
+                        <p class="card-text h3">15 Adet</p>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-3">
+                <div class="card text-white bg-secondary shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Toplam</h5>
+                        <p class="card-text h3">124 Sipariş</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card shadow-sm border-0">
+            <div class="card-header"><i class="fa fa-list-alt mr-1"></i> Tüm Siparişler (En Yeniden En Eskiye)</div>
+            <div class="card-body p-0">
+                <table class="table table-hover mb-0">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>#</th>
+                            <th>Müşteri</th>
+                            <th>Tarih</th>
+                            <th>Toplam Tutar</th>
+                            <th>Durum</th>
+                            <th>İşlem</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>#8005</td><td>Yusuf Çelebi</td><td>01.12.2025</td><td>3200.00 TL</td><td><span class="badge badge-danger">Yeni Sipariş</span></td><td><button class="btn btn-sm btn-info-floral"><i class="fa fa-search"></i> Detay</button></td></tr>
+                        <tr><td>#8004</td><td>Mehmet Can</td><td>30.11.2025</td><td>1500.00 TL</td><td><span class="badge badge-warning">Hazırlanıyor</span></td><td><button class="btn btn-sm btn-info-floral"><i class="fa fa-search"></i> Detay</button></td></tr>
+                        <tr><td>#8003</td><td>Gizem A.</td><td>28.11.2025</td><td>1200.00 TL</td><td><span class="badge badge-info">Kargoda</span></td><td><button class="btn btn-sm btn-info-floral"><i class="fa fa-search"></i> Detay</button></td></tr>
+                        <tr><td>#8002</td><td>Ali Veli</td><td>25.11.2025</td><td>1000. TL</td><td><span class="badge badge-success">Teslim Edildi</span></td><td><button class="btn btn-sm btn-info-floral"><i class="fa fa-search"></i> Detay</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

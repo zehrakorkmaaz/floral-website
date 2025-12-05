@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Floral - Çiçek & Aranjman Dünyası">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Floral - Ürün Detayları: Zarif Kasımpatı Buketi</title>
+
+    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+      /* Yeni Stil: Yorum Görseli (Profil resmi değil, daha büyük ürün fotoğrafı stili) */
+      .review-photo {
+          width: 300px; /* Büyütülmüş Genişlik */
+          height: 300px; /* Büyütülmüş Yükseklik */
+          border-radius: 4px; /* Köşeler artık yuvarlak değil, hafifçe kavisli */
+          margin-right: 20px;
+          margin-bottom: 15px; /* Yorum metninden biraz ayırma */
+          background-color: #f0f0f0; 
+          background-image: url('img/bg-img/foto.jpg'); /* Varsayılan fotoğraf yolu */
+          background-size: cover;
+          background-position: center;
+          border: 1px solid #ddd; /* İnce çerçeve */
+          float: left; /* Metin sağdan sarsın */
+      }
+      .single_user_review {
+          overflow: hidden; 
+          border-bottom: 1px dashed #eee; /* Yorumları ayırmak için çizgi */
+          padding-bottom: 15px;
+      }
+      .review-details {
+          overflow: hidden; /* Yeni görselin yanındaki metni sarmalamak için */
+      }
+      .classy-navbar .classynav ul li a {
+          font-size: 14px !important;
+          padding: 0 10px !important; 
+          text-transform: uppercase;
+          font-weight: 600;
+      }
+      .nav-brand { margin-right: 15px !important; }
+      
+      /* Breadcrumb Arka Planı */
+      .top-breadcrumb-area {
+          height: 250px;
+          background-position: center top;
+      }
+  
+      /* Footer logo stili (orijinal şablondan) */
+      .footer-area .footer-logo a {
+        font-family: "Playfair Display", serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: #fff;
+        text-decoration: none;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-circle"></div>
+        <div class="preloader-img"><img src="img/core-img/leaf.png" alt=""></div>
+    </div>
+
+    <header class="header-area">
+        <div class="top-header-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="top-header-content d-flex align-items-center justify-content-between">
+                            <div class="top-header-meta">
+                                <a href="mailto:info@floral.com.tr"><i class="fa fa-envelope-o"></i> <span>info@floral.com.tr</span></a>
+                                <a href="tel:+905551234567"><i class="fa fa-phone"></i> <span>+90 555 123 45 67</span></a>
+                            </div>
+                            <div class="top-header-meta d-flex">
+                                <div class="login"><a href="admin-panel.html" target="_blank"><i class="fa fa-lock"></i> <span>Yönetici</span></a></div>
+                                <div class="cart"><a href="cart.html"><i class="fa fa-shopping-cart"></i> <span>(1)</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="alazea-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <nav class="classy-navbar justify-content-between" id="alazeaNav">
+
+                        <a href="index.html" class="nav-brand" style="font-family:'Playfair Display',serif;font-weight:700;font-size:32px;color:#70c745;text-decoration:none;">Floral</a>
+
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <div class="classy-menu">
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <div class="classynav">
+                               <ul>
+                  <li><a href="index.html">Anasayfa</a></li>
+                  <li><a href="about.html">Hakkımızda</a></li>
+                  <li><a href="misyon-vizyon.html">Misyon-Vizyon</a></li> 
+                  <li class="active"><a href="departments.html">Birimler</a></li> 
+
+                  <li class="active">
+                    <a href="shop.html">Ürünler</a>
+                    <ul class="dropdown">
+                        <li><a href="shop.html?category=buketler">Buketler</a></li>
+                        <li><a href="shop.html?category=saksi-cicekleri">Saksı Çiçekleri</a></li>
+                        <li><a href="shop.html?category=ozel-tasarim">Özel Tasarım</a></li>
+                    </ul>
+                  </li>
+                   <li><a href="statistics.html">Sayılarla Biz</a></li>
+                  <li><a href="blog.html">Duyurular</a></li>
+                  <li><a href="contact.html">İletişim</a></li>
+                </ul>
+
+                        <div class="search-form">
+                            <form action="#" method="get">
+                                <input type="search" name="search" id="search" placeholder="Ürün veya içerik ara...">
+                                <button type="submit" class="d-none"></button>
+                            </form>
+                            <div class="closeIcon"><i class="fa fa-times"></i></div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumb-area">
+        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(img/bg-img/kasım.jpg);">
+            <h2>ÜRÜN DETAYI</h2>
+        </div>
+
+        <div class="container">
+            <div class="row"><div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> Anasayfa</a></li>
+                        <li class="breadcrumb-item"><a href="shop.html">Ürünler</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Zarif Kasımpatı Buketi</li>
+                    </ol>
+                </nav>
+            </div></div>
+        </div>
+    </div>
+    <section class="single_product_details_area mb-50">
+        <div class="produts-details--content mb-50">
+            <div class="container">
+                <div class="row justify-content-between">
+
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="single_product_thumb">
+                            <div id="product_details_slider" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img class="d-block w-100" src="img/bg-img/kasım.jpg" alt="Kasımpatı Görsel 1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="img/bg-img/ksmpt.jpg" alt="Kasımpatı Görsel 2">
+                                    </div>
+                                </div>
+                                <ol class="carousel-indicators">
+                                    <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url(img/bg-img/kasım.jpg);"></li>
+                                    <li data-target="#product_details_slider" data-slide-to="1" style="background-image: url(img/bg-img/ksmpt.jpg);"></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="single_product_desc">
+                            <h4 class="title">Zarif Kasımpatı Buketi</h4>
+                            <h4 class="price">₺1500</h4>
+                            <div class="short_overview">
+                                <p>Sonbaharın asil çiçeği kasımpatı, sadeliği ve zarafeti temsil eder. Beyaz ve mor tonlardaki seçkin kasımpatılarla hazırlanan bu buket, saygı ve hayranlık duygularınızı zarif bir dille ifade eder.</p>
+                            </div>
+
+                            <div class="cart--area d-flex flex-wrap align-items-center">
+                                <form class="cart clearfix d-flex align-items-center" method="post">
+                                    <div class="quantity">
+                                        <span class="qty-minus" onclick="var qty=document.getElementById('qty'); if(qty.value>1) qty.value--;"><i class="fa fa-minus"></i></span>
+                                        <input type="number" class="qty-text" id="qty" step="1" min="1" max="12" name="quantity" value="1">
+                                        <span class="qty-plus" onclick="var qty=document.getElementById('qty'); qty.value++;"><i class="fa fa-plus"></i></span>
+                                    </div>
+                                    <button type="submit" class="btn alazea-btn ml-15">Sepete Ekle</button>
+                                </form>
+                                <div class="wishlist-compare d-flex flex-wrap align-items-center">
+                                    <a href="#" class="wishlist-btn ml-15"><i class="icon_heart_alt"></i></a>
+                                    <a href="#" class="compare-btn ml-15"><i class="arrow_left-right_alt"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="products--meta">
+                                <p><span>Ürün Kodu:</span> FL2025KAS</p>
+                                <p><span>Kategori:</span> Buketler</p>
+                                <p><span>Etiketler:</span> kasımpatı, mor, beyaz, zarif, sonbahar</p>
+                                <p><span>Paylaş:</span>
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="product_details_tab clearfix">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item"><a href="#description" class="nav-link active" data-toggle="tab">Açıklama</a></li>
+                    <li class="nav-item"><a href="#addi-info" class="nav-link" data-toggle="tab">Ek Bilgi</a></li>
+                    <li class="nav-item"><a href="#reviews" class="nav-link" data-toggle="tab">Yorumlar</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade show active" id="description">
+                        <div class="description_area">
+                            <p>Özenle seçilmiş, uzun ömürlü kasımpatılardan oluşan bu zarif aranjman, özel anlarda saygı ve bağlılık göstermek için idealdir. Ev ve ofis dekorasyonuna asil bir dokunuş katar.</p>
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="addi-info">
+                        <div class="additional_info_area">
+                            <p><strong>Boyut:</strong> 35-40 cm</p>
+                            <p><strong>Renk:</strong> Karışık (Beyaz, Mor, Bordo)</p>
+                            <p><strong>Malzeme:</strong> Doğal Kasımpatı Çiçekleri</p>
+                            <p><strong>Kullanım:</strong> Saygı, Hayranlık, Zarafet, Dekorasyon amaçlı</p>
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="reviews">
+                        <div class="reviews_area">
+                            <ul>
+                                <li>
+                                    <div class="single_user_review mb-15">
+                                        
+                                        <div class="review-photo" title="Yusuf Çelebi'nin Yorum Fotoğrafı"></div>
+                                        
+                                        <div class="review-rating">
+                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                            <span>Zarafet ve Mutluluk</span>
+                                        </div>
+                                        <div class="review-details">
+                                            <p>by <a href="#">Yusuf Çelebi</a> on <span>8 Kasım 2025</span></p>
+                                            <p>Hoşlandığım kıza aldım ve çiçeği verip ona çıkma teklifi ettim, bu fotoğraftaki buket sayesinde sevgili olduk, teşekkür ederiz! Tam da bu resimdeki gibi taze geldi. ❤️</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="related-products-area">
+        <div class="container">
+            <div class="section-heading text-center">
+                <h2>İLGİLİ ÜRÜNLER</h2>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-product-area mb-100">
+                        <div class="product-img">
+                            <a href="#"><img src="img/bg-img/41.png" alt=""></a>
+                            <div class="product-tag"><a href="#">Yeni</a></div>
+                        </div>
+                        <div class="product-info mt-15 text-center">
+                            <p>Pembe Gül Buketi</p>
+                            <h6>₺1050</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-product-area mb-100">
+                        <div class="product-img">
+                            <a href="#"><img src="img/bg-img/42.png" alt=""></a>
+                        </div>
+                        <div class="product-info mt-15 text-center">
+                            <p>Orkide Aranjmanı</p>
+                            <h6>₺1540</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-product-area mb-100">
+                        <div class="product-img">
+                            <a href="#"><img src="img/bg-img/43.png" alt=""></a>
+                        </div>
+                        <div class="product-info mt-15 text-center">
+                            <p>Kokina, Gül, Gerbera ve Krizantem Buketi</p>
+                            <h6>₺800</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer-area bg-img" style="background-image: url(img/bg-img/3.jpg);">
+        <div class="main-footer-area">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="footer-logo mb-30">
+                                <a href="#" style="font-family:'Playfair Display',serif;font-weight:700;font-size:28px;color:#fff;text-decoration:none;">Floral</a>
+
+                            </div>
+                            <p>Floral, doğanın zarafetini özel anlarınıza taşır. Her çiçek bir hikaye anlatır; biz o hikayeyi güzelleştiriyoruz.</p>
+                            <div class="social-info">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title"><h5>HIZLI LİNKLER</h5></div>
+                            <nav class="widget-nav">
+                                <ul>
+                                    <li><a href="shop.html">Satın Al</a></li>
+                                    <li><a href="about.html">Sık Sorulanlar</a></li>
+                                    <li><a href="checkout.html">Ödeme</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li><a href="shop.html">İade</a></li>
+                                    <li><a href="shop.html">Kargo</a></li>
+                                    <li><a href="about.html">Kariyer</a></li>
+                                    <li><a href="contact.html">İletişim</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title"><h5>EN ÇOK SATANLAR</h5></div>
+                            <div class="single-best-seller-product d-flex align-items-center">
+                                <div class="product-thumbnail"><img src="img/bg-img/4.jpg" alt=""></div>
+                                <div class="product-info">
+                                    <a href="shop.html">Klasik Buket</a><p>₺1050</p>
+                                </div>
+                            </div>
+                            <div class="single-best-seller-product d-flex align-items-center">
+                                <div class="product-thumbnail"><img src="img/bg-img/5.jpg" alt=""></div>
+                            <div class="product-info">
+                                    <a href="shop.html">Lale Aranjmanı</a><p>₺1300</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title"><h5>İLETİŞİM</h5></div>
+                            <div class="contact-information">
+                                <p><span>Adres:</span> İstanbul, Türkiye</p>
+                                <p><span>Telefon:</span> +90 555 123 45 67</p>
+                                <p><span>Email:</span> info@floral.com.tr</p>
+                                <p><span>Çalışma Saatleri:</span> Pzt - Cmt: 09:00 - 19:00</p>
+                                <p><span>Kapalı Gün:</span> Pazar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12"><div class="border-line"></div></div>
+                    <div class="col-12 col-md-6">
+                        <div class="copywrite-text">
+                            <p>© 2025 Floral | Tüm Hakları Saklıdır.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="footer-nav">
+                            <nav>
+                                <ul>
+                                    <li><a href="index.html">Anasayfa</a></li>
+                                    <li><a href="about.html">Hakkımızda</a></li>
+                                    <li><a href="misyon-vizyon.html">Misyon&Vizyon</a></li>
+                                    <li><a href="departments.html">Birimler</a></li>
+                                    <li><a href="shop.html">Ürünler</a></li>
+                                    <li><a href="statistics.html">Sayılarla Biz</a></li>
+                                    <li><a href="blog.html">Duyurular</a></li>
+                                    <li><a href="contact.html">İletişim</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="js/bootstrap/popper.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/plugins/plugins.js"></script>
+    <script src="js/active.js"></script>
+</body>
+</html>

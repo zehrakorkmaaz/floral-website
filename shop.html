@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Floral - Çiçek & Aranjman Dünyası">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Floral - Ürünlerimiz</title>
+
+  <link rel="icon" href="img/core-img/favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Menü Stilini Anasayfa ile Eşitleme */
+    .classy-navbar .classynav ul li a {
+        font-size: 14px !important;
+        padding: 0 10px !important; 
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    .nav-brand { margin-right: 15px !important; }
+    
+    /* Breadcrumb Arka Planı */
+    .top-breadcrumb-area {
+        height: 250px;
+        background-position: center top;
+    }
+
+    /* Footer logo stili (orijinal şablondan) */
+    .footer-area .footer-logo a {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Ürün görsellerini aynı boyut yapma */
+    .shop-products-area .product-img img {
+      width: 100%;
+      height: 260px;       /* İstersen 240-280 arası oynayabiliriz */
+      object-fit: cover;   /* Taşmadan kırparak sığdırır */
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="preloader d-flex align-items-center justify-content-center">
+    <div class="preloader-circle"></div>
+    <div class="preloader-img"><img src="img/core-img/leaf.png" alt=""></div>
+  </div>
+
+  <header class="header-area">
+    <div class="top-header-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="top-header-content d-flex align-items-center justify-content-between">
+              <div class="top-header-meta">
+                <a href="mailto:info@floral.com.tr"><i class="fa fa-envelope-o"></i> <span>info@floral.com.tr</span></a>
+                <a href="tel:+905551234567"><i class="fa fa-phone"></i> <span>+90 555 123 45 67</span></a>
+              </div>
+              <div class="top-header-meta d-flex">
+                <div class="login"><a href="admin-panel.html" target="_blank"><i class="fa fa-lock"></i> <span>Yönetici</span></a></div>
+                <div class="cart"><a href="cart.html"><i class="fa fa-shopping-cart"></i> <span>(1)</span></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alazea-main-menu">
+      <div class="classy-nav-container breakpoint-off">
+        <div class="container">
+          <nav class="classy-navbar justify-content-between" id="alazeaNav">
+            <a href="index.html" class="nav-brand" style="font-family:'Playfair Display',serif;font-weight:700;font-size:32px;color:#70c745;text-decoration:none;">Floral</a>
+            <div class="classy-navbar-toggler">
+              <span class="navbarToggler"><span></span><span></span><span></span></span>
+            </div>
+
+            <div class="classy-menu">
+              <div class="classycloseIcon">
+                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+              </div>
+              <div class="classynav">
+                <ul>
+                  <li><a href="index.html">Anasayfa</a></li>
+                  <li><a href="about.html">Hakkımızda</a></li>
+                  <li><a href="misyon-vizyon.html">Misyon-Vizyon</a></li> 
+                  <!-- Sadece Ürünler aktif -->
+                  <li><a href="departments.html">Birimler</a></li> 
+
+                  <li class="active">
+                    <a href="shop.html">Ürünler</a>
+                    <ul class="dropdown">
+                        <li><a href="shop.html?category=buketler">Buketler</a></li>
+                        <li><a href="shop.html?category=saksi-cicekleri">Saksı Çiçekleri</a></li>
+                        <li><a href="shop.html?category=ozel-tasarim">Özel Tasarım</a></li>
+                    </ul>
+                  </li>
+                   <li><a href="statistics.html">Sayılarla Biz</a></li>
+                  <li><a href="blog.html">Duyurular</a></li>
+                  <li><a href="contact.html">İletişim</a></li>
+                </ul>
+
+                  <div id="searchIcon"><i class="fa fa-search"></i></div>
+                          </div>
+      
+                <div class="search-form">
+                    <form action="#" method="get">
+                        <input type="search" name="search" id="search" placeholder="Ürün veya içerik ara...">
+                        <button type="submit" class="d-none"></button>
+                    </form>
+                    <div class="closeIcon"><i class="fa fa-times"></i></div>
+                </div>
+              </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="breadcrumb-area">
+    <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(img/bg-img/floral-shop.jpg);">
+      <h2>ÜRÜNLERİMİZ</h2>
+    </div>
+    <div class="container">
+      <div class="row"><div class="col-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> Anasayfa</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Ürünlerimiz</li>
+          </ol>
+        </nav>
+      </div></div>
+    </div>
+  </div>
+
+  <section class="shop-page section-padding-0-100">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-12 col-md-4 col-lg-3">
+          <div class="shop-sidebar-area">
+            
+            <div class="shop-widget catagory mb-50">
+              <h4 class="widget-title">Kategoriler</h4>
+              <div class="widget-desc">
+                <div class="custom-control custom-checkbox mb-2" onclick="window.location.href='shop.html'">
+                  <input type="checkbox" class="custom-control-input" id="check1">
+                  <label class="custom-control-label" for="check1">Tüm Ürünler</label>
+                </div>
+                <div class="custom-control custom-checkbox mb-2" onclick="window.location.href='shop.html?category=buketler'">
+                  <input type="checkbox" class="custom-control-input" id="check2">
+                  <label class="custom-control-label" for="check2">Buketler</label>
+                </div>
+                <div class="custom-control custom-checkbox mb-2" onclick="window.location.href='shop.html?category=saksi-cicekleri'">
+                  <input type="checkbox" class="custom-control-input" id="check3">
+                  <label class="custom-control-label" for="check3">Saksı Çiçekleri</label>
+                </div>
+                <div class="custom-control custom-checkbox mb-2" onclick="window.location.href='shop.html?category=orkide'">
+                  <input type="checkbox" class="custom-control-input" id="check4">
+                  <label class="custom-control-label" for="check4">Orkide</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="shop-widget best-seller mb-50">
+              <h4 class="widget-title">En Çok Satanlar</h4>
+              <div class="single-best-seller-product d-flex align-items-center">
+                <div class="product-thumbnail"><a href="shop-details.html"><img src="img/bg-img/4.jpg" alt=""></a></div>
+                <div class="product-info"><a href="shop-details.html">Kır Buketi</a><p>₺750</p></div>
+              </div>
+              <div class="single-best-seller-product d-flex align-items-center">
+                <div class="product-thumbnail"><a href="shop-details.html"><img src="img/bg-img/5.jpg" alt=""></a></div>
+                <div class="product-info"><a href="shop-details.html">Pembe Lale</a><p>₺900</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-8 col-lg-9">
+          <div class="shop-products-area">
+            <div class="row">
+
+              <!-- Kasımpatı: direkt kasımpatı.html'e gider -->
+              <div class="col-12 col-sm-6 col-lg-4">
+                <div class="single-product-area mb-50" data-category="buketler">
+                  <div class="product-img">
+                    <a href="kasımpatı.html"><img src="img/bg-img/kasım.jpg" alt="Kasımpatı Buketi"></a>
+                    <div class="product-tag"><a href="#">Yeni</a></div>
+                    <div class="product-meta d-flex">
+                      <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                      <a href="kasımpatı.html" class="add-to-cart-btn">İncele</a>
+                    </div>
+                  </div>
+                  <div class="product-info mt-15 text-center">
+                    <a href="kasımpatı.html"><p>Kasımpatı Buketi</p></a>
+                    <h6>₺1300</h6>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-lg-4">
+                <div class="single-product-area mb-50" data-category="buketler">
+                  <div class="product-img">
+                    <a href="shop-details.html"><img src="img/bg-img/40.png" alt="Gelin Buketi"></a>
+                    <div class="product-tag"><a href="#">Yeni</a></div>
+                    <div class="product-meta d-flex">
+                      <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                      <a href="shop-details.html" class="add-to-cart-btn">İncele</a>
+                    </div>
+                  </div>
+                  <div class="product-info mt-15 text-center">
+                    <a href="shop-details.html"><p>Gelin Buketi</p></a>
+                    <h6>₺2000</h6>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-lg-4">
+                <div class="single-product-area mb-50" data-category="saksi-cicekleri">
+                  <div class="product-img">
+                    <a href="shop-details.html"><img src="img/bg-img/42.png" alt="Orkide Aranjmanı"></a>
+                    <div class="product-meta d-flex">
+                      <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                      <a href="shop-details.html" class="add-to-cart-btn">İncele</a>
+                    </div>
+                  </div>
+                  <div class="product-info mt-15 text-center">
+                    <a href="shop-details.html"><p>Orkide Aranjmanı</p></a>
+                    <h6>₺1540</h6>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-lg-4">
+                <div class="single-product-area mb-50" data-category="buketler">
+                  <div class="product-img">
+                    <a href="shop-details.html"><img src="img/bg-img/43.png" alt="Kokina, Gül, Gerbera ve Krizantem Buketi"></a>
+                    <div class="product-meta d-flex">
+                      <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                      <a href="shop-details.html" class="add-to-cart-btn">İncele</a>
+                    </div>
+                  </div>
+                  <div class="product-info mt-15 text-center">
+                    <a href="shop-details.html"><p>Kokina, Gül, Gerbera ve Krizantem Buketi</p></a>
+                    <h6>₺800</h6>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-lg-4">
+                <div class="single-product-area mb-50" data-category="buketler">
+                  <div class="product-img">
+                    <a href="shop-details.html"><img src="img/bg-img/aa.jpeg" alt="Romantik Lilyum ve Gül Buketi"></a>
+                    <div class="product-meta d-flex">
+                      <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                      <a href="shop-details.html" class="add-to-cart-btn">İncele</a>
+                    </div>
+                  </div>
+                  <div class="product-info mt-15 text-center">
+                    <a href="shop-details.html"><p>Romantik Lilyum ve Gül Buketi</p></a>
+                    <h6>₺1500</h6>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-12 col-sm-6 col-lg-4">
+                <div class="single-product-area mb-50" data-category="orkide">
+                  <div class="product-img">
+                    <a href="shop-details.html"><img src="img/bg-img/44.png" alt="Beyaz Orkide"></a>
+                    <div class="product-tag"><a href="#">Popüler</a></div>
+                    <div class="product-meta d-flex">
+                      <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                      <a href="shop-details.html" class="add-to-cart-btn">İncele</a>
+                    </div>
+                  </div>
+                  <div class="product-info mt-15 text-center">
+                    <a href="shop-details.html"><p>Saksıda Beyaz Orkide</p></a>
+                    <h6>₺499</h6>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-12 col-sm-6 col-lg-4">
+                <div class="single-product-area mb-50" data-category="ozel-tasarim">
+                  <div class="product-img">
+                    <a href="shop-details.html"><img src="img/bg-img/45.png" alt="Özel Tasarım Aranjman"></a>
+                    <div class="product-meta d-flex">
+                      <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                      <a href="shop-details.html" class="add-to-cart-btn">İncele</a>
+                    </div>
+                  </div>
+                  <div class="product-info mt-15 text-center">
+                    <a href="shop-details.html"><p>Yılbaşı Kutusu</p></a>
+                    <h6>₺599</h6>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-area bg-img" style="background-image: url(img/bg-img/3.jpg);">
+        <div class="main-footer-area">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="footer-logo mb-30">
+                                <a href="#" style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#fff;text-decoration:none;">Floral</a>
+
+                            </div>
+                            <p>Floral, doğanın zarafetini özel anlarınıza taşır. Her çiçek bir hikaye anlatır; biz o hikayeyi güzelleştiriyoruz.</p>
+                            <div class="social-info">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title"><h5>HIZLI LİNKLER</h5></div>
+                            <nav class="widget-nav">
+                                <ul>
+                                    <li><a href="shop.html">Satın Al</a></li>
+                                    <li><a href="about.html">Sık Sorulanlar</a></li>
+                                    <li><a href="checkout.html">Ödeme</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li><a href="shop.html">İade</a></li>
+                                    <li><a href="shop.html">Kargo</a></li>
+                                    <li><a href="about.html">Kariyer</a></li>
+                                    <li><a href="contact.html">İletişim</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title"><h5>EN ÇOK SATANLAR</h5></div>
+                            <div class="single-best-seller-product d-flex align-items-center">
+                                <div class="product-thumbnail"><img src="img/bg-img/4.jpg" alt=""></div>
+                                <div class="product-info">
+                                    <a href="shop.html">Klasik Buket</a><p>₺1050</p>
+                                </div>
+                            </div>
+                            <div class="single-best-seller-product d-flex align-items-center">
+                                <div class="product-thumbnail"><img src="img/bg-img/5.jpg" alt=""></div>
+                                <div class="product-info">
+                                    <a href="shop.html">Lale Aranjmanı</a><p>₺1300</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title"><h5>İLETİŞİM</h5></div>
+                            <div class="contact-information">
+                                <p><span>Adres:</span> İstanbul, Türkiye</p>
+                                <p><span>Telefon:</span> +90 555 123 45 67</p>
+                                <p><span>Email:</span> info@floral.com.tr</p>
+                                <p><span>Çalışma Saatleri:</span> Pzt - Cmt: 09:00 - 19:00</p>
+                                <p><span>Kapalı Gün:</span> Pazar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12"><div class="border-line"></div></div>
+                    <div class="col-12 col-md-6">
+                        <div class="copywrite-text">
+                            <p>© 2025 Floral | Tüm Hakları Saklıdır.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="footer-nav">
+                            <nav>
+                                <ul>
+                                    <li><a href="index.html">Anasayfa</a></li>
+                                    <li><a href="about.html">Hakkımızda</a></li>
+                                    <li><a href="misyon-vizyon.html">Misyon&Vizyon</a></li>
+                                    <li><a href="departments.html">Birimler</a></li>
+                                   
+                                    <li><a href="statistics.html">Sayılarla Biz</a></li>
+                                    <li><a href="blog.html">Duyurular</a></li>
+                                    <li><a href="contact.html">İletişim</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="js/bootstrap/popper.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/plugins/plugins.js"></script>
+    <script src="js/active.js"></script>
+    
+    <script>
+        // Bu fonksiyon URL'deki kategori parametresini ('?category=...') okur.
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Ürünleri filtreleme ana fonksiyonu
+        function filterProducts() {
+            const category = getQueryParam('category');
+            const productsContainer = document.querySelector('.shop-products-area .row');
+            const products = document.querySelectorAll('.shop-products-area .single-product-area');
+            
+            // 1. Yan menüdeki tüm işaretleri kaldır (önceki seçimleri temizle)
+            const allChecks = document.querySelectorAll('.shop-widget.catagory input[type="checkbox"]');
+            allChecks.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+
+            // 2. Kategori yoksa veya "tum-urunler" ise tüm ürünleri göster.
+            if (!category || category === 'tum-urunler') {
+                products.forEach(product => {
+                    product.closest('.col-12').style.display = 'block';
+                });
+                
+                // "Tüm Ürünler" checkbox'ını işaretle
+                const check1 = document.getElementById('check1');
+                if(check1) check1.checked = true;
+                
+            } else {
+                let found = false;
+                // Kategori adları ile checkbox ID'lerini eşleştirme
+                const categoryMap = {
+                    'buketler': 'check2', 
+                    'saksi-cicekleri': 'check3', 
+                    'orkide': 'check4', 
+                    // Üst menüdeki 'Özel Tasarım' için ayrı bir kutu yok, 'Orkide' kutusunu kullanabiliriz
+                    'ozel-tasarim': 'check4' 
+                };
+                
+                // İlgili kategori checkbox'ını işaretle
+                const checkId = categoryMap[category];
+                if (checkId) {
+                    const checkElement = document.getElementById(checkId);
+                    if (checkElement) {
+                        checkElement.checked = true;
+                    }
+                }
+
+                // Kategoriye göre ürünleri filtrele
+                products.forEach(product => {
+                    const productCategory = product.getAttribute('data-category');
+                    const parentCol = product.closest('.col-12'); 
+                    
+                    if (productCategory === category) {
+                        parentCol.style.display = 'block';
+                        found = true;
+                    } else {
+                        parentCol.style.display = 'none';
+                    }
+                });
+
+                // 3. Ürün bulunamadı mesajını yönet (Opsiyonel)
+                let noResults = document.getElementById('no-results-message');
+                if (!found && productsContainer) {
+                     if (!noResults) {
+                         noResults = document.createElement('div');
+                         noResults.id = 'no-results-message';
+                         noResults.className = 'col-12 text-center mt-50';
+                         noResults.innerHTML = '<p class="text-danger lead">Bu kategoriye ait ürün bulunamadı. Lütfen üst menüdeki "Ürünler" altındaki <strong>Özel Tasarım</strong> kategorisini test etmek için kullanın. (Ürün listesi bu kategori için bir ürün içermemektedir.)</p>';
+                         productsContainer.appendChild(noResults);
+                     }
+                } else if (noResults) {
+                    noResults.remove();
+                }
+            }
+        }
+
+        // Sayfa tamamen yüklendiğinde filtrelemeyi çalıştır
+        window.addEventListener('load', filterProducts);
+    </script>
+    </body>
+</html>

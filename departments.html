@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Floral - Organizasyon Yapısı ve Departmanlar">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Floral - Birimler</title>
+
+  <link rel="icon" href="img/core-img/favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Menü Stilini Anasayfa ile Eşitleme */
+    .classy-navbar .classynav ul li a {
+        font-size: 14px !important;
+        padding: 0 10px !important; 
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    .nav-brand { margin-right: 15px !important; }
+
+    /* Breadcrumb Arka Planı (Diğer sayfalarla aynı) */
+    .top-breadcrumb-area {
+        height: 250px;
+        background-position: center top;
+    }
+
+    /* Footer logo stili (orijinal şablondan) */
+    .footer-area .footer-logo a {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Birim Kartları için Özel Stiller */
+    .department-card {
+        padding: 30px;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        transition: all 0.3s;
+        min-height: 250px; 
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+    }
+
+    .department-card:hover {
+        border-color: #70c745;
+        box-shadow: 0 4px 15px rgba(112, 199, 69, 0.1);
+        transform: translateY(-5px);
+    }
+
+    /* İkon veya Görsel alanı stilini birleştirme */
+    .department-icon {
+        width: 60px; /* Görsel boyutunu küçültme */
+        height: auto;
+        margin-bottom: 15px;
+        color: #70c745;
+    }
+    .department-card img {
+        width: 60px; /* Görsel boyutunu küçültme */
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+
+    .department-card h5 {
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 10px;
+    }
+    .department-card p {
+        font-size: 14px;
+        color: #6c757d;
+        flex-grow: 1;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="preloader d-flex align-items-center justify-content-center">
+    <div class="preloader-circle"></div>
+    <div class="preloader-img"><img src="img/core-img/leaf.png" alt=""></div>
+  </div>
+
+  <header class="header-area">
+    <div class="top-header-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="top-header-content d-flex align-items-center justify-content-between">
+              <div class="top-header-meta">
+                <a href="mailto:info@floral.com.tr"><i class="fa fa-envelope-o"></i> <span>info@floral.com.tr</span></a>
+                <a href="tel:+905551234567"><i class="fa fa-phone"></i> <span>+90 555 123 45 67</span></a>
+              </div>
+              <div class="top-header-meta d-flex">
+                <div class="login"><a href="admin-panel.html" target="_blank"><i class="fa fa-lock"></i> <span>Yönetici</span></a></div>
+                <div class="cart"><a href="cart.html"><i class="fa fa-shopping-cart"></i> <span>(1)</span></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alazea-main-menu">
+      <div class="classy-nav-container breakpoint-off">
+        <div class="container">
+          <nav class="classy-navbar justify-content-between" id="alazeaNav">
+            <a href="index.html" class="nav-brand" style="font-family:'Playfair Display',serif;font-weight:700;font-size:32px;color:#70c745;text-decoration:none;">Floral</a>
+
+            <div class="classy-navbar-toggler">
+              <span class="navbarToggler"><span></span><span></span><span></span></span>
+            </div>
+
+            <div class="classy-menu">
+              <div class="classycloseIcon">
+                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+              </div>
+
+              <div class="classynav">
+                <ul>
+                  <li><a href="index.html">Anasayfa</a></li>
+                  <li><a href="about.html">Hakkımızda</a></li>
+                  <li><a href="misyon-vizyon.html">Misyon&Vizyon</a></li> 
+                  <li class="active"><a href="departments.html">Birimler</a></li> 
+
+                  <li class="active">
+                    <a href="shop.html">Ürünler</a>
+                    <ul class="dropdown">
+                        <li><a href="shop.html?category=buketler">Buketler</a></li>
+                        <li><a href="shop.html?category=saksi-cicekleri">Saksı Çiçekleri</a></li>
+                        <li><a href="shop.html?category=ozel-tasarim">Özel Tasarım</a></li>
+                    </ul>
+                  </li>
+                   <li><a href="statistics.html">Sayılarla Biz</a></li>
+                  <li><a href="blog.html">Duyurular</a></li>
+                  <li><a href="contact.html">İletişim</a></li>
+                </ul>
+
+                <div id="searchIcon"><i class="fa fa-search"></i></div>
+              </div>
+              
+              <div class="search-form">
+                  <form action="#" method="get">
+                      <input type="search" name="search" id="search" placeholder="Ürün veya içerik ara...">
+                      <button type="submit" class="d-none"></button>
+                  </form>
+                  <div class="closeIcon"><i class="fa fa-times"></i></div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <div class="breadcrumb-area">
+    <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center"
+      style="background-image: url(img/bg-img/floral-about.jpg);">
+      <h2>FLORAL BİRİMLERİ</h2>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> Anasayfa</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Birimler</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="departments-area section-padding-100-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading text-center">
+                    <h2>KURUMSAL YAPIMIZ</h2>
+                    <p>Floral, organize bir ekip çalışmasıyla size en iyisini sunar.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="department-card">
+                    <img src="img/core-img/s1.png" alt="Tedarik ve Üretim İkonu" class="department-icon">
+                    <h5>Tedarik ve Tasarım Departmanı</h5>
+                    <p>En taze ve kaliteli çiçekleri yerel üreticilerden temin eder, yaratıcı ve benzersiz aranjmanları hazırlar.</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="department-card">
+                    <img src="img/core-img/cf2.png" alt="E-Ticaret İkonu" class="department-icon">
+                    <h5>E-Ticaret ve Pazarlama</h5>
+                    <p>Online mağaza operasyonlarını yönetir, dijital pazarlama stratejilerini ve sosyal medya iletişimini yürütür.</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="department-card">
+                    <img src="img/core-img/cf3.png" alt="Müşteri Deneyimi İkonu" class="department-icon">
+                    <h5>Müşteri Deneyimi</h5>
+                    <p>Sipariş öncesi, sırası ve sonrası destek, geri bildirim yönetimi ve çözüm odaklı hizmet sunar.</p>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-4">
+                <div class="department-card">
+                    <img src="img/core-img/teslimat.png" alt="Lojistik ve Teslimat İkonu" class="department-icon">
+                    <h5>Lojistik ve Teslimat</h5>
+                    <p>Ürünlerin zamanında, taze ve hasarsız bir şekilde müşterilere ulaşmasını organize eder.</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="department-card">
+                    <img src="img/core-img/cf4.png" alt="Finans İkonu" class="department-icon">
+                    <h5>Finans ve İdari İşler</h5>
+                    <p>Şirketin mali operasyonlarını, bütçeleme süreçlerini ve genel idari gereksinimlerini yönetir.</p>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-4">
+                <div class="department-card">
+                    <img src="img/core-img/cf1.png" alt="Kurumsal Çözüm İkonu" class="department-icon">
+                    <h5>Kurumsal Çözümler</h5>
+                    <p>Özel etkinlikler, düğün ve şirket organizasyonları için büyük ölçekli ve kişiye özel aranjman hizmeti sunar.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+  </section>
+  
+  <div class="container">
+    <div class="row"><div class="col-12"><div class="border-line"></div></div></div>
+  </div>
+  
+  <section class="call-to-action-area section-padding-100-0">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8 text-center mb-50">
+                <div class="section-heading">
+                    <h2>EKİBİMİZE KATILIN!</h2>
+                    <p>Floral ailesinde yer almak ve çiçeklerin büyülü dünyasında kariyer yapmak ister misiniz?</p>
+                </div>
+                <a href="mailto:kariyer@floral.com.tr" class="btn alazea-btn">Kariyer Fırsatları</a>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <footer class="footer-area bg-img" style="background-image: url(img/bg-img/3.jpg);">
+        <div class="main-footer-area">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="footer-logo mb-30">
+                                <a href="#" style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#fff;text-decoration:none;">Floral</a>
+                            </div>
+                            <p>Floral, doğanın zarafetini özel anlarınıza taşır. Her çiçek bir hikaye anlatır; biz o hikayeyi güzelleştiriyoruz.</p>
+                            <div class="social-info">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title"><h5>HIZLI LİNKLER</h5></div>
+                            <nav class="widget-nav">
+                                <ul>
+                                    <li><a href="shop.html">Satın Al</a></li>
+                                    <li><a href="about.html">Sık Sorulanlar</a></li>
+                                    <li><a href="checkout.html">Ödeme</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li><a href="shop.html">İade</a></li>
+                                    <li><a href="shop.html">Kargo</a></li>
+                                    <li><a href="about.html">Kariyer</a></li>
+                                    <li><a href="contact.html">İletişim</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title"><h5>EN ÇOK SATANLAR</h5></div>
+                            <div class="single-best-seller-product d-flex align-items-center">
+                                <div class="product-thumbnail"><img src="img/bg-img/4.jpg" alt=""></div>
+                                <div class="product-info">
+                                    <a href="shop.html">Klasik Buket</a><p>₺1050</p>
+                                </div>
+                            </div>
+                            <div class="single-best-seller-product d-flex align-items-center">
+                                <div class="product-thumbnail"><img src="img/bg-img/5.jpg" alt=""></div>
+                                <div class="product-info">
+                                    <a href="shop.html">Lale Aranjmanı</a><p>₺1300</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title"><h5>İLETİŞİM</h5></div>
+                            <div class="contact-information">
+                                <p><span>Adres:</span> İstanbul, Türkiye</p>
+                                <p><span>Telefon:</span> +90 555 123 45 67</p>
+                                <p><span>Email:</span> info@floral.com.tr</p>
+                                <p><span>Çalışma Saatleri:</span> Pzt - Cmt: 09:00 - 19:00</p>
+                                <p><span>Kapalı Gün:</span> Pazar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12"><div class="border-line"></div></div>
+                    <div class="col-12 col-md-6">
+                        <div class="copywrite-text">
+                            <p>© 2025 Floral | Tüm Hakları Saklıdır.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="footer-nav">
+                            <nav>
+                                <ul>
+                                    <li><a href="index.html">Anasayfa</a></li>
+                                    <li><a href="about.html">Hakkımızda</a></li>
+                                    <li><a href="misyon-vizyon.html">Misyon-Vizyon</a></li>
+                                  
+                                    <li><a href="shop.html">Ürünler</a></li>
+                                    <li><a href="statistics.html">Sayılarla Biz</a></li>
+                                    <li><a href="blog.html">Duyurular</a></li>
+                                    <li><a href="contact.html">İletişim</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="js/bootstrap/popper.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/plugins/plugins.js"></script>
+    <script src="js/active.js"></script>
+</body>
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Floral - İstatistiklerle Biz">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Floral - Sayılarla Biz</title>
+  <link rel="icon" href="img/core-img/favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    /* Menü Stilini Anasayfa ile Eşitleme */
+    .classy-navbar .classynav ul li a {
+        font-size: 14px !important;
+        padding: 0 10px !important; 
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    .nav-brand { margin-right: 15px !important; }
+
+    /* Breadcrumb Arka Planı */
+    .top-breadcrumb-area {
+        height: 250px;
+        background-position: center top;
+    }
+    
+    /* Footer logo stili (orijinal şablondan) */
+    .footer-area .footer-logo a {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* 🚨 YENİLİKÇİ GRAFİK BOYUT VE ESTETİK AYARI 🚨 */
+    .card-chart-container {
+        height: 350px; /* Sabit yükseklik ile orantı garantisi */
+        position: relative;
+    }
+    /* Radar grafik için özel yükseklik */
+    #satisfactionChart-container {
+        height: 450px; /* Daha geniş bir radar grafiği için */
+        position: relative;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="preloader d-flex align-items-center justify-content-center">
+    <div class="preloader-circle"></div>
+    <div class="preloader-img"><img src="img/core-img/leaf.png" alt=""></div>
+  </div>
+
+  <header class="header-area">
+    <div class="top-header-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="top-header-content d-flex align-items-center justify-content-between">
+              <div class="top-header-meta">
+                <a href="mailto:info@floral.com.tr"><i class="fa fa-envelope-o"></i> <span>info@floral.com.tr</span></a>
+                <a href="tel:+905551234567"><i class="fa fa-phone"></i> <span>+90 555 123 45 67</span></a>
+              </div>
+              <div class="top-header-meta d-flex">
+                <div class="login"><a href="admin-panel.html" target="_blank"><i class="fa fa-lock"></i> <span>Yönetici</span></a></div>
+                <div class="cart"><a href="cart.html"><i class="fa fa-shopping-cart"></i> <span>(1)</span></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alazea-main-menu">
+      <div class="classy-nav-container breakpoint-off">
+        <div class="container">
+          <nav class="classy-navbar justify-content-between" id="alazeaNav">
+            <a href="index.html" class="nav-brand" style="font-family:'Playfair Display',serif;font-weight:700;font-size:32px;color:#70c745;text-decoration:none;">Floral</a>
+            <div class="classy-navbar-toggler"><span class="navbarToggler"><span></span><span></span><span></span></span></div>
+            <div class="classy-menu">
+              <div class="classycloseIcon"><div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div></div>
+              <div class="classynav">
+                <ul>
+                  <li><a href="index.html">Anasayfa</a></li>
+                  <li><a href="about.html">Hakkımızda</a></li>
+                  <li><a href="misyon-vizyon.html">Misyon&Vizyon</a></li> 
+                  <li class="active"><a href="departments.html">Birimler</a></li> 
+
+                  <li class="active">
+                    <a href="shop.html">Ürünler</a>
+                    <ul class="dropdown">
+                        <li><a href="shop.html?category=buketler">Buketler</a></li>
+                        <li><a href="shop.html?category=saksi-cicekleri">Saksı Çiçekleri</a></li>
+                        <li><a href="shop.html?category=ozel-tasarim">Özel Tasarım</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="statistics.html">Sayılarla Biz</a></li>
+                  <li><a href="blog.html">Duyurular</a></li>
+                  <li><a href="contact.html">İletişim</a></li>
+                </ul>
+
+                <div id="searchIcon"><i class="fa fa-search"></i></div>
+              </div>
+              
+              <div class="search-form">
+                  <form action="#" method="get">
+                      <input type="search" name="search" id="search" placeholder="Ürün veya içerik ara...">
+                      <button type="submit" class="d-none"></button>
+                  </form>
+                  <div class="closeIcon"><i class="fa fa-times"></i></div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="breadcrumb-area">
+    <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center"
+      style="background-image: url(img/bg-img/floral-stats.jpg);">
+      <h2>SAYILARLA FLORAL</h2>
+    </div>
+    <div class="container">
+      <div class="row"><div class="col-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> Anasayfa</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Sayılarla Biz</li>
+          </ol>
+        </nav>
+      </div></div>
+    </div>
+  </div>
+
+  <section class="section-padding-100">
+    <div class="container">
+      <div class="section-heading text-center">
+        <h2>Büyüme ve Müşteri Rakamlarımız</h2>
+        <p>Hizmet kalitemizi ve pazar tercihlerini gösteren veriler.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-md-6 mb-50">
+          <div class="card shadow-sm border-0 h-100 p-3">
+            <h5 class="text-center mb-4">Yıllık Sipariş Büyümesi (Adet)</h5>
+            <div class="card-chart-container">
+              <canvas id="salesChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 mb-50">
+          <div class="card shadow-sm border-0 h-100 p-3">
+            <h5 class="text-center mb-4">En Çok Tercih Edilen Kategori Dağılımı</h5>
+            <div class="card-chart-container">
+              <canvas id="productsChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row mt-50">
+          <div class="col-12">
+             <div class="card shadow-sm border-0 p-4">
+                <h5 class="text-center mb-4">Hizmet Performans Değerlendirmesi</h5>
+                <div id="satisfactionChart-container">
+                  <canvas id="satisfactionChart"></canvas>
+                </div>
+             </div>
+          </div>
+      </div>
+
+
+      <div class="row mt-100">
+        <div class="col-12"><h3 class="text-center mb-4">Floral Sözleri</h3></div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single-cool-fact d-flex align-items-center justify-content-center mb-50">
+                <div class="cf-content"><h2><span class="counter">98</span>%</h2><h6>Tazelik Garantisi</h6></div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single-cool-fact d-flex align-items-center justify-content-center mb-50">
+                <div class="cf-content"><h2><span class="counter">500</span>+</h2><h6>Benzersiz Tasarım</h6></div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single-cool-fact d-flex align-items-center justify-content-center mb-50">
+                <div class="cf-content"><h2><span class="counter">95</span>%</h2><h6>Hızlı Teslimat</h6></div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single-cool-fact d-flex align-items-center justify-content-center mb-50">
+                <div class="cf-content"><h2><span class="counter">10</span>K+</h2><h6>Mutlu Müşteri</h6></div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-area bg-img" style="background-image: url(img/bg-img/3.jpg);">
+        <div class="main-footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="footer-logo mb-30">
+                                <a href="#" style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#fff;text-decoration:none;">Floral</a>
+                            </div>
+                            <p>Floral, doğanın zarafetini özel anlarınıza taşır. Her çiçek bir hikaye anlatır; biz o hikayeyi güzelleştiriyoruz.</p>
+                            <div class="social-info">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title"><h5>HIZLI LİNKLER</h5></div>
+                            <nav class="widget-nav">
+                                <ul>
+                                    <li><a href="shop.html">Satın Al</a></li>
+                                    <li><a href="about.html">Sık Sorulanlar</a></li>
+                                    <li><a href="checkout.html">Ödeme</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li><a href="shop.html">İade</a></li>
+                                    <li><a href="shop.html">Kargo</a></li>
+                                    <li><a href="about.html">Kariyer</a></li>
+                                    <li><a href="contact.html">İletişim</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title"><h5>EN ÇOK SATANLAR</h5></div>
+                            <div class="single-best-seller-product d-flex align-items-center">
+                                <div class="product-thumbnail"><img src="img/bg-img/4.jpg" alt=""></div>
+                                <div class="product-info">
+                                    <a href="shop.html">Klasik Buket</a><p>₺1050</p>
+                                </div>
+                            </div>
+                            <div class="single-best-seller-product d-flex align-items-center">
+                                <div class="product-thumbnail"><img src="img/bg-img/5.jpg" alt=""></div>
+                                <div class="product-info">
+                                    <a href="shop.html">Lale Aranjmanı</a><p>₺1300</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title"><h5>İLETİŞİM</h5></div>
+                            <div class="contact-information">
+                                <p><span>Adres:</span> İstanbul, Türkiye</p>
+                                <p><span>Telefon:</span> +90 555 123 45 67</p>
+                                <p><span>Email:</span> info@floral.com.tr</p>
+                                <p><span>Çalışma Saatleri:</span> Pzt - Cmt: 09:00 - 19:00</p>
+                                <p><span>Kapalı Gün:</span> Pazar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12"><div class="border-line"></div></div>
+                    <div class="col-12 col-md-6">
+                        <div class="copywrite-text">
+                            <p>© 2025 Floral | Tüm Hakları Saklıdır.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="footer-nav">
+                            <nav>
+                                <ul>
+                                    <li><a href="index.html">Anasayfa</a></li>
+                                    <li><a href="about.html">Hakkımızda</a></li>
+                                    <li><a href="misyon-vizyon.html">Misyon-Vizyon</a></li>
+                                    <li><a href="departments.html">Birimler</a></li>
+                                    <li><a href="shop.html">Ürünler</a></li>
+                                    
+                                    <li><a href="blog.html">Duyurular</a></li>
+                                    <li><a href="contact.html">İletişim</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+  <script src="js/jquery/jquery-2.2.4.min.js"></script>
+  <script src="js/bootstrap/popper.min.js"></script>
+  <script src="js/bootstrap/bootstrap.min.js"></script>
+  <script src="js/plugins/plugins.js"></script>
+  <script src="js/active.js"></script>
+
+  <script>
+    // Yeni renk paleti (çiçek temalı pastel tonlar)
+    const floralColors = {
+      primary: '#70c745', // Koyu Yeşil (Floral marka rengi)
+      pink: '#f8a5c2',   // Pastel Pembe (Gül)
+      purple: '#b39cd0',  // Açık Mor (Lavanta)
+      orange: '#fec99a',  // Pastel Turuncu (Şeftali)
+      lightGreen: '#c5e1a5', // Açık Yeşil
+      blue: '#9fa8da'     // Açık Mavi (Unutma Beni)
+    };
+
+    // Çizgi Grafik (Yıllık Büyüme)
+    const ctx1 = document.getElementById('salesChart').getContext('2d');
+    new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: ['2020', '2021', '2022', '2023', '2024'],
+        datasets: [{
+          label: 'Yıllık Sipariş Adedi',
+          data: [1200, 1900, 3000, 5000, 8500],
+          borderColor: floralColors.pink, // Pastel pembe çizgi
+          backgroundColor: 'rgba(248, 165, 194, 0.4)', // Pastel pembe dolgu
+          borderWidth: 3,
+          tension: 0.4, 
+          fill: true,
+          pointRadius: 5,
+          pointBackgroundColor: floralColors.primary, // Vurgu rengi
+          pointBorderColor: '#fff',
+          pointHoverRadius: 7
+        }]
+      },
+      options: { 
+        responsive: true, 
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { 
+            position: 'top', 
+            labels: { 
+              boxWidth: 12, 
+              font: { size: 13, family: "'Playfair Display', serif" } 
+            } 
+          },
+          tooltip: {
+            backgroundColor: 'rgba(0,0,0,0.7)',
+            titleFont: { family: "'Playfair Display', serif", size: 14 },
+            bodyFont: { family: "'Segoe UI', sans-serif", size: 12 },
+            padding: 10,
+            cornerRadius: 5
+          }
+        },
+        scales: {
+            y: { 
+                beginAtZero: true, 
+                grid: { color: 'rgba(0, 0, 0, 0.05)' },
+                ticks: { font: { size: 11 } }
+            },
+            x: { 
+                grid: { display: false },
+                ticks: { font: { size: 11 } }
+            }
+        }
+      }
+    });
+
+    // Pasta Grafik (Kategori Tercihleri)
+    const ctx2 = document.getElementById('productsChart').getContext('2d');
+    new Chart(ctx2, {
+      type: 'doughnut',
+      data: {
+        labels: ['Buketler', 'Saksı Çiçekleri', 'Özel Tasarımlar', 'Aksesuar'],
+        datasets: [{
+          data: [45, 25, 20, 10],
+          // Yeni renk paleti (çeşitli çiçek tonları)
+          backgroundColor: [floralColors.primary, floralColors.purple, floralColors.orange, floralColors.pink], 
+          hoverOffset: 8,
+          borderColor: '#fff', // Dilimler arasında beyaz çizgi
+          borderWidth: 2
+        }]
+      },
+      options: { 
+        responsive: true, 
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { 
+            position: 'right', 
+            labels: { 
+              padding: 15, 
+              boxWidth: 12,
+              font: { size: 13, family: "'Playfair Display', serif" } 
+            } 
+          },
+          tooltip: {
+            backgroundColor: 'rgba(0,0,0,0.7)',
+            titleFont: { family: "'Playfair Display', serif", size: 14 },
+            bodyFont: { family: "'Segoe UI', sans-serif", size: 12 },
+            padding: 10,
+            cornerRadius: 5
+          }
+        }
+      }
+    });
+    
+    // RADAR GRAFİK (Performans Değerlendirmesi)
+    const ctx3 = document.getElementById('satisfactionChart').getContext('2d');
+    new Chart(ctx3, {
+      type: 'radar',
+      data: {
+        labels: ['Müşteri Memnuniyeti', 'Zamanında Teslimat', 'Tasarım Kalitesi', 'Ürün Çeşitliliği', 'Fiyat Performansı'],
+        datasets: [{
+          label: 'Değerlendirme Puanı (%)',
+          data: [95, 90, 92, 88, 85], 
+          backgroundColor: 'rgba(179, 156, 208, 0.4)', // Pastel mor dolgu
+          borderColor: floralColors.purple, // Koyu mor çizgi
+          pointBackgroundColor: floralColors.orange, // Turuncu noktalar
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: floralColors.orange,
+          borderWidth: 2
+        }]
+      },
+      options: { 
+          responsive: true, 
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: 'rgba(0,0,0,0.7)',
+              titleFont: { family: "'Playfair Display', serif", size: 14 },
+              bodyFont: { family: "'Segoe UI', sans-serif", size: 12 },
+              padding: 10,
+              cornerRadius: 5
+            }
+          },
+          scales: {
+              r: {
+                  angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
+                  grid: { color: 'rgba(0, 0, 0, 0.1)' },
+                  pointLabels: { 
+                    font: { size: 12, family: "'Playfair Display', serif" },
+                    color: '#555' 
+                  },
+                  ticks: {
+                    beginAtZero: true,
+                    max: 100,
+                    stepSize: 10,
+                    font: { size: 10 },
+                    color: '#777',
+                    backdropColor: 'transparent' // Arka planı şeffaf yapar
+                  }
+              }
+          }
+      }
+    });
+
+  </script>
+</body>
+</html>
