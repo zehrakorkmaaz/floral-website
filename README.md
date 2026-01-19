@@ -53,7 +53,7 @@ Ek olarak admin panel arayüzleri hazırlanmıştır.
 Proje, **Colorlib – Alazea HTML Template** üzerine inşa edilmiştir.  
 Aşağıdaki özelleştirmeler yapılmıştır:
 
-- Renk paleti yenilendi ✨
+- Renk paleti yenilendi 
 - Logo ve kurumsal marka tasarımı oluşturuldu
 - Menü yapısı yeniden düzenlendi
 - Fontlar:
